@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ADMIN </title>
+</head>
+<body>
+
+    <% for (user of allUsers) { %>
+        <h2> <%= user.username %> <a href="/admin/<%= user.id %>"> Delete User </a> </h2>
+    <% } %>
+
+    <a href="/"> Home </a>
+</body>
+</html>

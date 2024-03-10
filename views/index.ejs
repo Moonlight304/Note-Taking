@@ -1,0 +1,39 @@
+<% layout('layouts/layout.ejs') %>
+
+    <div class="login">
+        <h1> Login </h1>
+
+        <form action="/login" method="post" class="loginForm">
+            <label for="username"> Enter Username: </label>
+            <input type="text" name="loginUser" id="username" required>
+
+            <label for="password"> Enter password: </label>
+            <input type="text" name="loginPass" id="password" required>
+
+            <input type="submit" value="Go" id="loginSubmit">
+        </form>
+        <br>
+        <h4> Don't have an account? </h4>
+        <button id="toSignup">Signup</button>
+    </div>
+
+
+
+    <div class="signup">
+        <h1> Signup </h1>
+
+        <form action="/signup" method="post" class="signupForm">
+            <label for="username"> Enter Username: </label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="password"> Enter password: </label>
+            <input type="text" name="password" id="password" required>
+
+            <input type="submit" value="Go" id="signupSubmit">
+        </form>
+        <br>
+        <h4> Already a user?</h4>
+        <button id="toLogin">Login</button>
+    </div>
+
+    <script src="index.js"></script>

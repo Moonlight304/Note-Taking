@@ -1,0 +1,59 @@
+<% layout('layouts/layout.ejs') %>
+
+    <h1> Hello <%= username %>
+    </h1>
+
+    <h2> Your Notes </h2>
+    <ul>
+        <% for (note of notes) { %>
+            <li>
+                <%= note %> <a href="/u/deleteNote/<%= id %>/<%= note %>"> Delete </a>
+            </li>
+        <% } %>
+    </ul>
+
+    <button id="createNote"> Create Note </button>
+    <form class="createNoteForm" action="/u/<%= id %>/newNote" method="post">
+        <textarea name="note" id="" cols="30" rows="5" placeholder="something..." required></textarea>
+        <br>
+        <input id="submitButton" type="submit" value="Save">
+    </form>
+
+
+    <br><br>
+
+    <form action="/">
+        <input type="submit" value="Logout">
+    </form>
+
+
+    <script>
+        const createNote = document.querySelector('#createNote');
+        const createNoteForm = document.querySelector('.createNoteForm');
+        const submitButton = document.querySelector('#submitButton');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createNoteForm.style.display = "none";
+        })
+
+        try {
+            createNote.addEventListener('click', () => {
+                createNote.style.display = "none";
+                createNoteForm.style.display = "block";
+            })
+        }
+        catch (e) {
+            console.log(e);
+        }
+
+        try {
+            submitButton.addEventListener('click', () => {
+                createNote.style.display = "block";
+                createNoteForm.style.display = "none";
+            })
+        }
+        catch (e) {
+            console.log(e);
+        }
+
+    </script>
